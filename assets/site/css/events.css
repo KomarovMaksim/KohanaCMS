@@ -1,0 +1,218 @@
+/***********************************************
+CSS FOR CALENDAR
+***********************************************/
+
+.calendarDiv {
+    padding-top: 6px;
+    padding-left: 6px;
+}
+
+.calendarForm {
+    /*height:130px;*/
+    width:360px;
+    padding:0px 0px 0px 20px;
+    float:left;  /*new option*/
+}
+
+.calendarForm label{
+    color:#5F5F5F;
+    font-size:10px;
+    font-weight:bold;
+}
+
+.btnCalendar {
+    background-color:#6A6A6A;
+    border:1px solid #DDDDDD;
+    color:#FFFFFF;
+    font-family:Tahoma,Verdana,Arial,'Trebuchet MS',GRHelvetica;
+    font-size:11px;
+    padding:1px 0;
+    width:86px;
+}
+
+select.slc {
+    width:200px;
+    background-color:#ffffff;
+}
+
+.headTable {
+    padding:0px;
+    background-color:#8de8fb;
+    /* background-color:#D7D7D7; */
+    width:238px;
+}
+
+.headTd {
+    text-align:center;
+    height:18px;
+}
+
+.headSpan {
+    color:white;
+    font-weight:bold;
+    font-size:8px;
+    cursor:pointer;
+}
+
+.headSpanMain {
+    color:white;
+    font-weight:bold;
+}
+
+.dayLiteral {
+    width:30px;
+    text-align:center;
+    color:#0094b5;
+    /*	color:#808080;*/
+    font-weight:bold;
+}
+
+.emptyDay {
+    width:30px;
+}
+
+
+.dayUnselected{
+    width:30px;
+    text-align:center;
+}
+
+.daySelected {
+    width:30px;
+    text-align:center;
+    /*border:1px solid black;*/
+    font-weight:bold;
+    background-color:#BED0FC;
+    color:black;
+}
+
+.dayLinkSelected {
+    cursor:pointer;
+    color:#ffffff;
+}
+
+.dayLinkUnselected {
+    cursor:pointer;
+    color:#8de8fb;
+    /*color:#BED0FC;*/
+}
+
+
+/****************************************************************************
+END OF CALENDAR CSS
+*****************************************************************************/
+
+
+
+
+
+/****************************************************************************
+SELECT CREATOR CSS
+*****************************************************************************/
+
+.csClassificationLabel{
+    padding:0px 0px 8px 0px;
+    color:#123575;
+    font-weight:bold;
+}
+
+
+.levelLabel{
+    padding:4px 0px 0px 4px;
+    color: #7C8E9D;
+
+}
+
+.levelSelects{
+    padding:4px 0px 10px 4px;
+
+}
+
+
+.searchModeLabel{
+    padding-left:4px;
+}
+
+/****************************************************************************
+END OF SELECT CREATOR CSS
+*****************************************************************************/
+
+/****************************************************************************
+RESULTS PORTLET
+*****************************************************************************/
+.resultTable{
+    padding-top: 10px;
+    border:0px;
+    background-color:#f7f7f7;
+}
+
+.resultTd{
+    padding:3px;
+}
+
+
+.resultList{
+    padding:3px 10px 3px 7px;
+    text-align:justify;
+}
+
+
+a.resultLabel:link, a.resultLabel:visited{
+    color:#123575;
+    font-weight:bold;
+    font-size:11px;
+    text-decoration:none;
+}
+
+a.resultLabel:hover{
+    color:#fc6b14;
+    text-decoration:none;
+}
+
+a.fullMonth:link, a.fullMonth:visited, a.fullMonth:hover {
+    color:#8DE8FB;
+    font-size:11px;
+    font-weight:bold;
+    text-align: right;
+    padding: 10px 30px 10px;
+    text-decoration:none;
+    display:block;
+}
+
+a.resultItem:link, a.resultItem:visited, a.resultItem:hover{
+    color:#04bff2;
+    font-size:11px;
+    text-decoration:none;
+}
+
+.event_body {
+    color:#6f6f6f;
+}
+
+.row1 {
+    background-color:#f7f7f7;
+    float:left;
+    /*width:518px;*/
+    padding:5px 0px 2px 2px;
+}
+
+.row2 {
+    background-color:#fbfbfb;
+    float:left;
+    /*width:518px;*/
+    padding:5px 0px 2px 2px;
+}
+
+
+.imgTd {
+    width:95px;
+}
+
+.textTd{
+    /*width:420px;*/
+    vertical-align:top;
+}
+
+/****************************************************************************
+END OF RESULTS PORTLET
+*****************************************************************************/

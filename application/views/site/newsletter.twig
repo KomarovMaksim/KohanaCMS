@@ -1,0 +1,104 @@
+{% extends 'site/article.twig' %}
+{% block head %}
+    <title>Греция. Вечная Классика | Рассылка</title>
+    <meta name="keywords" content="{{ event.meta_keywords }}">
+    <meta name="description" content="{{ event.meta_description }}">
+{% endblock %}
+{% block content %}
+    {{ parent() }}<br /><br />
+    <div class="feedback">
+
+             <div class="errors">
+              {% for error in errors %}
+                <div style="font-size: 12px;color: #6b0505;background-color: #f4bfbf;margin: 5px 0 0 0; padding: 5px 10px;">{{ error }}</div>
+            {% endfor %}
+        </div>
+
+           <form id="feedback" method="post" class="input-k">
+
+            <!--<div>
+                <label>Имя<span class="asterisk">*</span></label>
+                <input type="text" name="name" value="{{ data.name }}">     <br />
+                <label>E-mail<span class="asterisk">*</span></label>
+                <input type="text" name="email" value="{{ data.email }}">  <br />
+                <label>Компания</label>
+                <input type="text" name="company" value="{{ data.company }}">  <br />
+                <label>Должность</label>
+                <input type="text" name="dolj" value="{{ data.dolj }}">  <br />
+                <label>Телефон</label>
+                <input type="text" name="phone" value="{{ data.phone }}">  <br />
+                <label>Адрес почтовый</label>
+                <input type="text" name="pochta" value="{{ data.pochta }}">  <br />
+                <label>Тема письма<span class="asterisk">*</span></label>
+                <input type="text" name="sub" value="{{ data.sub }}">  <br />
+                <label>Текстовая форма<span class="asterisk">*</span></label>
+                <textarea name="message" rows="3">{{ data.message }}</textarea>
+            </div>-->
+            <div>
+                <label>Обращение</label>
+                <div class="inp-block">
+                    <select name="title">
+                        <option>Выберите</option>
+                        <option>Господин</option>
+                        <option>Госпожа</option>
+                       
+                    </select>
+                </div><br />
+                <label>Имя<span class="asterisk">*</span></label>
+                <input type="text" name="first_name" value="{{ data.first_name }}">  <br />
+                <label>Фамилия</label>
+                <input type="text" name="last_name" value="{{ data.last_name }}">  <br />
+                <label>E-mail<span class="asterisk">*</span></label>
+                <input type="text" name="email" value="{{ data.email }}">  <br />
+
+                <label>Контакты</label>
+                <div class="inp-block">
+                    <ul>
+                        <li>
+                            <label>Улица</label>
+                            <input type="text" name="street">
+                        </li>
+                        <li>
+                            <label>Город</label>
+                            <input type="text" name="city">
+                        </li>
+                        <li>
+                            <label>Индекс</label>
+                            <input type="text" name="postal_code">
+                        </li>
+                        <li>
+                            <label>Страна</label>
+                            <select name="country">
+                                <option>Выберите страну</option>
+                                <option>Россия</option>
+                                <option>Украина</option>
+                                <option>Белоруссия</option>
+                                <option>Казахстан</option>
+                                <option>Греция</option>
+                                <option>Другое</option>
+                            </select>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </form>
+
+
+
+        <div class="btn-panel">
+        <input class="send-btn button" name="submit" value="Отправить">
+
+        </div>
+
+        <div class="clearfix"></div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.send-btn').click(function (e) {
+                e.preventDefault();
+                $('#feedback').submit();
+            });
+        });
+    </script>
+
+{% endblock %}

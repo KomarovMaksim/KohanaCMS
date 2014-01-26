@@ -1,0 +1,7 @@
+AuthType Basic
+AuthName "/www/grec.london-adv.ru/webstat"
+AuthUserFile /home/admin/data/etc/4824686.passwd
+DirectoryIndex index.html
+<Limit GET POST>
+	require valid-user
+</Limit>

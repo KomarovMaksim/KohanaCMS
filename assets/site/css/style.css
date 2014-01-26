@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+.slider, .slider img {
+    width: 750px;
+    height: 211px;
+}
+
+.slider {
+    position: relative;
+}
+
+.slider img {
+    position: absolute;
+}

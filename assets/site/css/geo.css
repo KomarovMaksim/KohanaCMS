@@ -1,0 +1,68 @@
+a.geo_results_link, a.geo_results_link:visited {
+    font-size: 12px;
+    font-weight: bold;
+    color: #5f5f5f;
+    text-decoration: none;
+}
+
+a.geo_results_link:hover {
+    font-size: 12px;
+    font-weight: bold;
+    color: #04bff2;
+    text-decoration: none;
+}
+
+div.gg_txt_page {
+    /*width:540px;*/
+    font-size: 11px;
+    font-family: Verdana, Tahoma, Arial;
+    padding: 0px 20px 0px 0px;
+    float: left; /*color:#6F6F6F;*/
+    /*text-align:justify;*/
+}
+
+div.gg_txt_page a, div.gg_txt_page a:visited {
+    font-size: 11px;
+    color: #04bff2;
+    text-decoration: none;
+}
+
+div.gg_txt_page a:hover {
+    font-size: 11px;
+    color: #04bff2;
+    text-decoration: none;
+}
+
+div.gg_txt_page h1 {
+    padding: 0px;
+    margin: 0px;
+    color: #000000;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+div.gg_txt_page h2 {
+    padding: 0px 0px 10px 0px;
+    margin: 0px;
+    color: #04bff2;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+div.gg_txt_page img {
+    padding: 0 8px 0 0;
+    border: 0 none;
+}
+
+div.shareLinks {
+    padding-top: 24px;
+    min-width: 300px;
+    _width: 300px;
+    clear: both;
+}
+
+div.shareLinks img {
+    width: 16px;
+    height: 16px;
+    padding: 0px 5px 0px 5px;
+}

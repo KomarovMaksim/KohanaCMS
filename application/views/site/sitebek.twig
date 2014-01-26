@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link type="text/css" rel="stylesheet" href="/assets/site/css/style.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+<form action="/search" method="post">
+    <input type="text" name="search_string">
+    <button type="submit">Искать</button>
+</form>
+<nav>
+    <ul>
+        {% for item1 in nav %}
+
+        <li>{{ item1.title }}
+            {% if item1.items|length > 0 %}
+            <ul>
+                {% for item2 in item1.items %}
+                <li>
+                    <a href="{{ item2.link }}">{{ item2.title }}</a>
+                    {% if item2.items|length > 0 %}
+                    <ul>
+                        {% for item3 in item2.items %}
+                        <li><a href="{{ item3.link }}">{{ item3.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</nav>
+
+
+<div class="slider">
+    {% for item in slider_items %}
+        <img {% if loop.first %}class="active" {% endif %}src="{{ item.image }}">
+    {% endfor %}
+    <script type="text/javascript">
+        $(function () {
+            $('.slider img').css({opacity: 0.0});
+            $('.slider .active').css({opacity: 1.0});
+            if ($('.slider img').size() > 1)
+            setInterval(function () {
+                var current = $('.slider .active');
+                var next = current.next();
+                if (!next.is('img'))
+                    next = $('.slider img').first();
+
+                next.css({opacity: 0.0}).addClass('active').animate({opacity: 1.0}, 1000);
+                current.animate({opacity: 0.0}, 1000).removeClass('active');
+            }, 10000)
+        })
+    </script>
+</div>
+<article>
+    {% block content %}
+    {% endblock %}
+</article>
+
+
+</body>
+</html>

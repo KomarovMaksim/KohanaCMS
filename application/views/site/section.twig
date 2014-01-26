@@ -1,0 +1,201 @@
+{% extends 'site/site.twig' %}
+
+{% block head %}
+    <title>Греция. Вечная Классика | {{ section.meta_title }}</title>
+    <meta name="keywords" content="{{ section.meta_keywords }}">
+    <meta name="description" content="{{ section.meta_description }}">
+<!-- Put this script tag to the <head> of your page -->
+<script type="text/javascript" src="//vk.com/js/api/openapi.js?105"></script>
+
+<script type="text/javascript">
+  VK.init({apiId: 4131335, onlyWidgets: true});
+</script>
+{% endblock %}
+
+{% block content %}
+
+<div class="portlet_2">
+    <style>            div.gg_breadcrumb {
+            width: 954px;
+            float: left;
+            color: #9f9f9f;
+            font-size: 10px;
+                     margin-top:20px;
+        }
+
+        div.gg_breadcrumb span {
+            color: #04bff2;
+        }
+
+        div.gg_breadcrumb a {
+            text-decoration: none;
+            color: #9f9f9f;
+        }        </style>
+   <div class="gg_breadcrumb">
+        <a href="/">Главная</a> &nbsp;/&nbsp;
+         {% for item in breadcrumbs %}
+        {% if item.link %}
+        <a href="{{ item.link }}">{{ item.title }}</a>
+        {% else %}
+            <span>{{ item.title }}</span>
+        {% endif %}
+        {% if not loop.last %} / {% endif %}
+    {% endfor %}
+        </div>
+</div>
+
+<div class="portlet_3">
+    <style xmlns:urlfunc="java.net.URLEncoder" xmlns:g="http://base.google.com/ns/1.0">            a.geo_results_link, a.geo_results_link:visited {
+            font-size: 12px;
+            font-weight: bold;
+            color: #5f5f5f;
+            text-decoration: none;
+        }
+
+        a.geo_results_link:hover {
+            font-size: 12px;
+            font-weight: bold;
+            color: #04bff2;
+            text-decoration: none;
+        }
+
+        div.gg_txt_page {
+            /*width:540px;*/
+            font-size: 11px;
+            font-family: Verdana, Tahoma, Arial;
+            padding: 0px 20px 0px 0px;
+            float: left; /*color:#6F6F6F;*/
+            /*text-align:justify;*/
+        }
+
+        div.gg_txt_page a, div.gg_txt_page a:visited {
+            font-size: 11px;
+            color: #04bff2;
+            text-decoration: none;
+        }
+
+        div.gg_txt_page a:hover {
+            font-size: 11px;
+            color: #04bff2;
+            text-decoration: none;
+        }
+
+        div.gg_txt_page h1 {
+            padding: 0px;
+            margin: 0px;
+            color: #000000;
+            font-size: 15px;
+            font-weight: normal;
+        }
+
+        div.gg_txt_page h2 {
+            padding: 0px 0px 10px 0px;
+            margin: 0px;
+            color: #04bff2;
+            font-size: 12px;
+            font-weight: normal;
+        }
+
+        div.gg_txt_page img {
+            padding: 0 8px 0 0;
+            border: 0 none;
+        }
+
+        div.shareLinks {
+            padding-top: 24px;
+            min-width: 300px;
+            _width: 300px;
+            clear: both;
+        }
+
+        div.shareLinks img {
+            width: 16px;
+            height: 16px;
+            padding: 0px 5px 0px 5px;
+        }        </style>
+    <div class="gg_txt_page">
+
+
+    <h1>{{ section.title }}</h1><br />
+    {% autoescape false %}{{ section.text }}{% endautoescape %}
+        <div class="shareLinks"><table><tbody><tr>
+    <td><iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" src="http://platform.twitter.com/widgets/tweet_button.1384994725.html#_=1386195314668&amp;count=horizontal&amp;id=twitter-widget-0&amp;lang=en&amp;original_referer=http%3A%2F%2Fwww.visitgreece.gr%2Fen%2Fgeography&amp;size=m&amp;text=Visit%20Greece%20%7C%20Geography&amp;url=http%3A%2F%2Fwww.visitgreece.gr%2Fen%2Fgeography&amp;via=VisitGreecegr" class="twitter-share-button twitter-tweet-button twitter-count-horizontal" title="Twitter Tweet Button" data-twttr-rendered="true" style="width: 110px; height: 20px;"></iframe><div style="width:15px;float:right;">&nbsp;</div></td>
+    <td><div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background-color: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px; background-position: initial initial; background-repeat: initial initial;"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" width="100%" id="I0_1386195314824" name="I0_1386195314824" src="https://apis.google.com/u/0/_/+1/fastbutton?usegapi=1&amp;bsv=o&amp;size=medium&amp;origin=http%3A%2F%2Fwww.visitgreece.gr&amp;url=http%3A%2F%2Fwww.visitgreece.gr%2Fen%2Fgeography&amp;gsrc=3p&amp;ic=1&amp;jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.ru.ZQGeNOICZqw.O%2Fm%3D__features__%2Fam%3DEQ%2Frt%3Dj%2Fd%3D1%2Frs%3DAItRSTM4239lAQe2Y-HSAgMWKoFgBAUpjw#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh&amp;id=I0_1386195314824&amp;parent=http%3A%2F%2Fwww.visitgreece.gr&amp;pfname=&amp;rpctoken=16119801" data-gapiattached="true" title="+1"></iframe></div></td>
+
+      <td>
+    <script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ru_RU/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-like" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+
+      </td>
+<td>
+
+<!-- Put this div tag to the place, where the Like block will be -->
+<div id="vk_like"></div>
+<script type="text/javascript">
+VK.Widgets.Like("vk_like", {type: "button"});
+</script></td>
+ </tr></tbody></table></div>
+<br /><br />
+
+   <!--- <h2>Ссылки</h2>   --->
+        {% if links|length > 0 %}
+   <style>						div.gg_related_links {				width:600px;				clear:both;				padding:20px 0px 0px 0px;			}						div.gg_tlt_related_links {				width:140px;				color:#000000;				font-size:14px;			}						div.gg_tlt_related_links span{				color:#04bff2;				font-size:17px;			}						div.gg_txt_related_links {				width:600px;				padding:10px 0px 0px 10px;						}						div.gg_txt_related_links_list {					/*width:125px;*/				color:#000000;				font-size:9px;				padding:0px 0px 16px 0px;			}
+   					div.gg_txt_related_links_list img{				padding:0px 0px 6px 0px;			}									div.gg_txt_related_links_list a{				padding:0px 10px 0px 0px;				color:#6f6f6f;				font-size:10px;				text-decoration:none;				background-image:url(/assets/site/eot/images/arrow4.jpg);				background-position:bottom right;				background-repeat:no-repeat;			}		</style>
+       <div class="gg_related_links">
+    <div class="gg_tlt_related_links">Похожие <span>ссылки</span></div>
+        {% for link in links %}
+    <div class="gg_txt_related_links"><div class="gg_txt_related_links_list">{{ link.title }}<br>
+    <a target="_blank" href="{{ link.link }}">{{ link.short_text }}</a></div>
+       {% endfor %}
+    </div>
+    </div>
+    {% endif %}
+
+     {% if articles|length > 0 %}
+    <div class="portlet_4">
+		<link type="text/css" href="/assets/site/eot/eventsSearch.css" rel="stylesheet"><table class="resultTable" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td class="resultTd"><a class="resultLabel" href="#">Результаты:</a></td>
+</tr>
+<tr>
+<td class="resultList">
+  {% for article in articles %}
+
+
+<div class="row2">
+<table cellspacing="0" cellpadding="0">
+<tbody>
+{% if is_title_tag != article.get_tags_titles() %}
+<tr>
+  <td colspan="2" class="resultTd" style="padding-top: 10px;padding-bottom:5px;font-size:16px"><span class="blue_title">{{ article.get_tags_titles() }}</span></td>
+</tr>
+ {% endif %}
+ {% set is_title_tag = article.get_tags_titles()  %}
+<tr>
+<td class="imgTd">
+<a itemprop="url" href="{{ article.get_url() }}">
+<img height="60px" width="85px" title=" {% if not article.get_tags_titles() %} Локации не найдены {% endif %}{{ article.get_tags_titles() }}" alt="{{ article.title  }}" itemprop="image" src="{{ article.image }}"></a>
+</td><td class="textTd">
+<a itemprop="url" class="resultItem" href="{{ article.get_url() }}">
+<span itemprop="name">{{ article.title  }}</span></a><br>
+<br>
+<span itemprop="description" class="event_body">{{ article.short_text  }}</span></td>
+</tr>
+</tbody></table>
+</div>
+{% endfor %}
+</td>
+</tr>
+<tr>
+<td class="resultTd"><span class="blue_title">Найдено&nbsp;{{ articles|length }}&nbsp;результатов</span></td>
+</tr>
+</tbody></table>
+</div>
+ {% endif %}
+{% endblock %}

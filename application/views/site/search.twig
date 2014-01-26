@@ -1,0 +1,154 @@
+{% extends 'site/site.twig' %}
+
+{% block head %}
+    <title>Греция. Вечная Классика | Результаты поиска</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+{% endblock %}
+
+{% block content %}
+
+<div class="portlet_2">
+    <style>            div.gg_breadcrumb {
+            width: 954px;
+            float: left;
+            color: #9f9f9f;
+            font-size: 10px;
+            margin-top:20px;
+        }
+
+        div.gg_breadcrumb span {
+            color: #04bff2;
+        }
+
+        div.gg_breadcrumb a {
+            text-decoration: none;
+            color: #9f9f9f;
+        }        </style>
+</div>
+
+<div class="portlet_3">
+    <style xmlns:urlfunc="java.net.URLEncoder" xmlns:g="http://base.google.com/ns/1.0">            a.geo_results_link, a.geo_results_link:visited {
+            font-size: 12px;
+            font-weight: bold;
+            color: #5f5f5f;
+            text-decoration: none;
+        }
+
+        a.geo_results_link:hover {
+            font-size: 12px;
+            font-weight: bold;
+            color: #04bff2;
+            text-decoration: none;
+        }
+
+        div.gg_txt_page {
+            /*width:540px;*/
+            font-size: 11px;
+            font-family: Verdana, Tahoma, Arial;
+            padding: 0px 20px 0px 0px;
+            float: left; /*color:#6F6F6F;*/
+            /*text-align:justify;*/
+        }
+
+        div.gg_txt_page a, div.gg_txt_page a:visited {
+            font-size: 11px;
+            color: #04bff2;
+            text-decoration: none;
+        }
+
+        div.gg_txt_page a:hover {
+            font-size: 11px;
+            color: #04bff2;
+            text-decoration: none;
+        }
+
+        div.gg_txt_page h1 {
+            padding: 0px;
+            margin: 0px;
+            color: #000000;
+            font-size: 15px;
+            font-weight: normal;
+        }
+
+        div.gg_txt_page h2 {
+            padding: 0px 0px 10px 0px;
+            margin: 0px;
+            color: #04bff2;
+            font-size: 12px;
+            font-weight: normal;
+        }
+
+        div.gg_txt_page img {
+            padding: 0 8px 0 0;
+            border: 0 none;
+        }
+
+        div.shareLinks {
+            padding-top: 24px;
+            min-width: 300px;
+            _width: 300px;
+            clear: both;
+        }
+
+        div.shareLinks img {
+            width: 16px;
+            height: 16px;
+            padding: 0px 5px 0px 5px;
+        }        </style>
+    <div class="gg_txt_page">
+     <br /><br />
+    <h1>Результаты поиска</h1>
+     <div class="portlet_4">
+		<link type="text/css" href="/assets/site/eot/eventsSearch.css" rel="stylesheet"><table class="resultTable" cellpadding="0" cellspacing="0">
+<tbody><tr>
+</tr>
+<tr>
+<td class="resultList">
+   {% for item in results %}
+<div class="row2">
+<table cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td class="imgTd">
+ {% if item.image %}
+<a itemprop="url" href="{{ item.get_url() }}">
+<img height="60px" width="85px" title="{{ item.title }}" alt="{{ item.title }}" itemprop="image" src="{{ item.image }}"></a>
+</td>    {% else %}
+ <a itemprop="url" href="{{ item.get_url() }}">
+<img height="60px" width="85px" title="{{ item.title }}" alt="{{ item.title }}" itemprop="image" src="{{ item.image }}"></a>
+</td>
+  {% endif %}
+<td class="textTd">
+<a itemprop="url" class="resultItem" href="{{ item.get_url() }}">
+<span itemprop="name">{{ item.title }}</span></a><br>
+<br>
+<span itemprop="description" class="event_body">{{ item.short_text  }}</span></td>
+</tr>
+</tbody></table>
+</div>
+{% endfor %}
+</td>
+</tr>
+<tr>
+<td class="resultTd" align="right">
+  {% if pagination %}
+    <div class="pagination" style="margin-right:10px;">Страницы:
+        {% for cp in 1..pagination.pages_amount %}
+            {% if cp == pagination.page %}
+                <b><a class="active">{{ cp }}</a></b>
+            {% else %}
+                <a href="?page={{ cp }}">{{ cp }}</a>
+            {% endif %}
+        {% endfor %}
+        <div class="clearfix"></div>
+    </div>
+    {% endif %}</td>
+</tr>
+<tr>
+<td class="resultTd"><span class="blue_title">Найдено&nbsp;{{ amount }}&nbsp;результатов</span></td>
+</tr>
+</tbody></table>
+</div>
+
+
+{% endblock %}

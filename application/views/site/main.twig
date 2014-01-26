@@ -1,0 +1,80 @@
+{% extends 'site/site.twig' %}
+
+{% block head %}
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>Греция. Вечная Классика | Главная</title>
+{% endblock %}
+
+{% block content %}
+
+    <div class="main_banner" style="padding-top:20px;">
+    {% for item3 in bannermain_items %}
+    <a target="_blank" href="{{ item3.url }}"><img title="" alt="" src="{{ item3.image }}"></a>
+ {% endfor %}
+  </div>
+
+
+
+<div class="portlet_2">
+		<style></style>
+		<div class="gg_highlight_box"><div class="gg_tlt_highlight_box">Греция в центре внимания</div><div class="gg_txt_highlight_box">
+    {% for article in articles %}
+<div class="gg_box"><div class="gg_img_box"><img title="{{ article.title }}" alt="{{ article.title }}" src="{{ article.image }}"></div><div class="gg_tlt_box"><b>{{ article.title }}</b><br> </div><div class="gg_txt_box"><p>{{ article.short_text  }} <a href="{{ article.get_url() }}"><span style=" color: #00B7EF;"><b>Читать далее</b></span></a><br>
+</p></div></div>
+          {% endfor %}
+</div></div></div>
+
+	<div class="portlet_3">
+		<link rel="stylesheet" media="screen" href="/assets/site/eot/styles/movingboxes.css"><script src="/assets/site/eot/scripts/jquery.movingboxes.min.js"></script><style>				ul#slider2 {					width : 524px;					height : 230px;					padding : 0 12px;				}				#slider2 li {					width : 168px;				}</style><div class="gg_home_events">
+<div class="gg_tlt_events">Ближайшие события</div>
+<ul id="slider2">
+      {% for event in event_all %}
+<li>
+<img title="" src="{{ event.image }}"><h1>{{ event.title }}</h1>
+<h2>{{ event.short_text }}</h2>
+<a itemprop="url" href="{{ event.get_url() }}">Читать дальше...</a>
+</li>   {% endfor %}
+</ul>
+     <script type="text/javascript">
+        $(function () {
+            $('#slider2').movingBoxes({
+                startPanel: 2,
+                reducedSize: 1,
+                fixedHeight: true,
+                wrap: false,
+                buildNav: false,
+                navFormatter: function () {
+                    return "&#9679;";
+                }
+            })
+
+        })
+    </script>
+    {% if splash %}
+        <script type="text/javascript">
+            $(function(){
+                var div = $('<div onclick="$(\'#site_container\').show();$(this).fadeOut(2000.0)"></div>');
+                div.css({
+                    display: 'none',
+                    width: '100%',
+                    height: '100%',
+                    'background-image': 'url({{ splash }})',
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    'background-size': 'cover',
+                    'z-index': 10,
+                    'background-position':'50% 50%'
+                })
+                $('body').append(div);
+                div.fadeIn(2000.0);
+                window.setTimeout(function() {
+                    $('#site_container').show();
+                    div.fadeOut(2000.0);
+                }, 7000);
+
+            })
+        </script>
+    {% endif %}
+{% endblock %}

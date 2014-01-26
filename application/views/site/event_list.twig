@@ -1,0 +1,246 @@
+{% extends 'site/site.twig' %}
+
+{% block head %}
+    <title>Греция. Вечная Классика | Cобытия</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+{% endblock %}
+
+{% block content %}
+
+<div class="portlet_2">
+    <style>            div.gg_breadcrumb {
+            width: 954px;
+            float: left;
+            color: #9f9f9f;
+            font-size: 10px;
+            margin-top:20px;
+        }
+
+        div.gg_breadcrumb span {
+            color: #04bff2;
+        }
+
+        div.gg_breadcrumb a {
+            text-decoration: none;
+            color: #9f9f9f;
+        }        </style>
+   <div class="gg_breadcrumb">
+        <a href="/">Главная</a> &nbsp;/&nbsp;
+         {% for item in breadcrumbs %}
+        {% if item.link %}
+        <a href="{{ item.link }}">{{ item.title }}</a>
+        {% else %}
+            <span>{{ item.title }}</span>
+        {% endif %}
+        {% if not loop.last %} / {% endif %}
+    {% endfor %}
+        </div>
+</div>
+
+<div class="portlet_3">
+    <style xmlns:urlfunc="java.net.URLEncoder" xmlns:g="http://base.google.com/ns/1.0">            a.geo_results_link, a.geo_results_link:visited {
+            font-size: 12px;
+            font-weight: bold;
+            color: #5f5f5f;
+            text-decoration: none;
+        }
+
+        a.geo_results_link:hover {
+            font-size: 12px;
+            font-weight: bold;
+            color: #04bff2;
+            text-decoration: none;
+        }
+
+        div.gg_txt_page {
+            /*width:540px;*/
+            font-size: 11px;
+            font-family: Verdana, Tahoma, Arial;
+            padding: 0px 20px 0px 0px;
+            float: left; /*color:#6F6F6F;*/
+            /*text-align:justify;*/
+        }
+
+        div.gg_txt_page a, div.gg_txt_page a:visited {
+            font-size: 11px;
+            color: #04bff2;
+            text-decoration: none;
+        }
+
+        div.gg_txt_page a:hover {
+            font-size: 11px;
+            color: #04bff2;
+            text-decoration: none;
+        }
+
+        div.gg_txt_page h1 {
+            padding: 0px;
+            margin: 0px;
+            color: #000000;
+            font-size: 15px;
+            font-weight: normal;
+        }
+
+        div.gg_txt_page h2 {
+            padding: 0px 0px 10px 0px;
+            margin: 0px;
+            color: #04bff2;
+            font-size: 12px;
+            font-weight: normal;
+        }
+
+        div.gg_txt_page img {
+            padding: 0 8px 0 0;
+            border: 0 none;
+        }
+
+        div.shareLinks {
+            padding-top: 24px;
+            min-width: 300px;
+            _width: 300px;
+            clear: both;
+        }
+
+        div.shareLinks img {
+            width: 16px;
+            height: 16px;
+            padding: 0px 5px 0px 5px;
+        }        </style>
+
+
+<div class="portlet_3">
+    <link type="text/css" href="/assets/site/css/geo.css" rel="stylesheet">
+
+    <link type="text/css" href="/assets/site/css/events.css" rel="stylesheet">
+    <link type="text/css" href="/assets/site/css/jquery-ui-1.8.2.custom.css" rel="stylesheet">
+    {#<script src="/assets/site/js/events.js" type="text/javascript"></script>#}
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js" type="text/javascript"></script>
+
+    {#<div style="float:left" id="calendar"></div>
+    <script type="text/javascript">
+        $(function () {
+            $('#calendar').datepicker({
+                dayNamesMin: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+                defaultDate: getSelectedDate(),
+                firstDay: 0,
+                maxDate: '+1y',
+                minDate: '-1m',
+                monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+                onSelect: function (dateText, inst) {
+                    var myDate = new Date(dateText);
+                    eventSearch._year = myDate.getFullYear();
+                    eventSearch._month = myDate.getMonth() + 1;
+                    eventSearch._day = myDate.getDate();
+                }
+            });
+        });
+    </script>
+    #}
+    <div class="calendarForm">
+        <form method="get">
+            <div class="cal-ev">
+                <div class="cal-bl">
+                    <label>Год</label>
+                    <br>
+                    <select name="y">
+                        <option value="0">(Все)</option>
+                        {% for y in 2013..date()|date('Y') + 1 %}
+                        <option value="{{ y }}"{% if y == year %} selected="selected"{% endif %}>{{ y }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="cal-bl">
+                    <label>Месяц</label>
+                    <br>
+                    <select name="m">
+                        <option value="0">(Все)</option>
+                        {% for m in months %}
+                        <option value="{{ loop.index }}"{% if loop.index == month %} selected="selected"{% endif %}>{{ m }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="cal-bl">
+                    <label>Категория</label>
+                    <br>
+                    <select name="category">
+                        <option value="0">(Все)</option>
+                        {% for c in categories %}
+                            <option value="{{ c.id }}"{% if c.id == category %} selected="selected"{% endif %}>{{ c.title }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+		<div class="cal-bl">
+                    <label>Место:</label>
+                    <br>
+                    <select class="slc" name="location">
+                        <option value="0">(Все)</option>
+                        {% for tag in tags %}
+                            <option value="{{ tag.id }}"{% if tag.id == location %} selected="selected"{% endif %}>{{ tag.title }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+		<div class="cal-bl" style="margin-top: 13px;">
+                    <input class="btnCalendar" type="submit" value="Поиск">
+                </div>
+            </div>
+            <div style="clear:both;"></div>
+            <div>
+
+            </div>
+        </form>
+    </div>
+    <div style="clear:both;"></div>
+
+    {#
+    <style xmlns:urlfunc="java.net.URLEncoder" xmlns:g="http://base.google.com/ns/1.0">
+    </style>
+    #}
+
+    {% if events|length > 0 %}
+        <h1>События</h1>
+
+        <div class="portlet_4">
+            <link type="text/css" href="/assets/site/eot/eventsSearch.css" rel="stylesheet">
+            <table class="resultTable" cellpadding="0" cellspacing="0">
+                <tbody>
+                <tr>
+                </tr>
+                <tr>
+                    <td class="resultList">
+                        {% for event in events %}
+                            <div class="row2">
+                                <table cellspacing="0" cellpadding="0">
+                                    <tbody>
+                                    <tr>
+                                        <td class="imgTd">
+                                            {% if event.image %}
+                                            <a itemprop="url" href="{{ event.get_url() }}">
+                                                <img height="60px" width="85px" title="{{ event.title }}" alt="{{ event.title }}" itemprop="image" src="{{ event.image }}"></a>
+                                        </td>    {% else %}
+                                            <a itemprop="url" href="{{ event.get_url() }}">
+                                                <img height="60px" width="85px" title="{{ event.title }}" alt="{{ event.title }}" itemprop="image" src="{{ event.image }}"></a>
+                                            </td>
+                                        {% endif %}
+                                        <td class="textTd">
+                                            <a itemprop="url" class="resultItem" href="{{ event.get_url() }}">
+                                                <span itemprop="name">{{ event.date|date('d.m.Y') }}&nbsp;&nbsp;{{ event.title }}</span></a><br>
+                                            <br>
+                                            <span itemprop="description" class="event_body">{{ event.short_text }}</span></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        {% endfor %}
+
+
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    {% endif %}
+
+
+
+    {% endblock %}
